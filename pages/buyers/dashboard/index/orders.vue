@@ -2,7 +2,7 @@
 	<loading-tab-view :loading="isLoading">
 		<div>
 			<order-card v-for="order in laravelData.data" :key="order.id" :order="order">
-				</OrderCard>
+			</order-card>
 		</div>
 	</loading-tab-view>
 </template>

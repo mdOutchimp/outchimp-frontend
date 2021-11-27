@@ -2,9 +2,9 @@
 	<loading-tab-view :loading="isLoading">
 		<div>
 			<order-card v-for="order in laravelData.data" :key="order.id" :order="order">
-				</OrderCard>
+			</order-card>
 
-				<pagination :data="laravelData" @pagination-change-page="getResults" class="mt-3"></pagination>
+			<pagination :data="laravelData" @pagination-change-page="getResults" class="mt-3"></pagination>
 		</div>
 	</loading-tab-view>
 </template>

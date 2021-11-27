@@ -14,7 +14,7 @@
 							<simplebar style="height: 500px">
 								<ul class="list-unstyled" v-if="activeUser">
 									<chat-item v-for="(seller, i) in sellers" :key="i" :user="seller" :activeId="activeUser.id" @user-selected="onUserSelect">
-										</ChatItem>
+									</chat-item>
 								</ul>
 								<ul class="list-unstyled" v-else>
 									<li class="text-grey text-center">No active user found</li>

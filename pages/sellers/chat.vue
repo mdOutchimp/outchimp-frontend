@@ -14,7 +14,7 @@
 							<simplebar style="height: 500px">
 								<ul class="list-unstyled" v-if="activeUser">
 									<chat-item v-for="seller in buyers" :key="seller.id" :user="seller" :activeId="activeUser.id" @user-selected="onUserSelect">
-										</ChatItem>
+									</chat-item>
 								</ul>
 								<ul class="list-unstyled" v-else>
 									<li class="text-grey text-center">No active user found</li>
@@ -39,7 +39,7 @@
 									</div>
 								</div>
 								<div class="chat-box__body p-3 d-flex flex-column flex-grow-1" v-chat-scroll>
-									<Message v-for="message in messages" :key="message.id" :message="message" :self="message.messagableId == $auth.user.id"></Message>
+									<message v-for="message in messages" :key="message.id" :message="message" :self="message.messagableId == $auth.user.id"></message>
 								</div>
 								<div class="chat-box__input p-3 border-top">
 									<form class="d-flex" @submit.prevent="sendMessage">
