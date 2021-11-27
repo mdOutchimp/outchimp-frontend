@@ -1,0 +1,51 @@
+{
+  "name": "bdlancers-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth-next": "5.0.0-1610809099.bcf293f",
+    "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/bootstrap-vue": "^2.0.4",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/proxy": "^2.1.0",
+    "@splidejs/vue-splide": "^0.3.5",
+    "bootstrap": "^5.0.0-beta1",
+    "core-js": "^3.6.5",
+    "laravel-vue-pagination": "^2.3.1",
+    "nuxt": "^2.14.6",
+    "nuxt-vue-multiselect": "^1.0.4",
+    "pusher-js": "^7.0.3",
+    "simplebar-vue": "^1.6.0",
+    "tiptap-vuetify": "^2.24.0",
+    "vee-validate": "^3.4.5",
+    "vue-chat-scroll": "^1.4.0",
+    "vue-click-outside": "^1.1.0",
+    "vue-country-region-select": "^2.0.14",
+    "vue-currency-filter": "^5.2.0",
+    "vue-dynamic-star-rating": "^1.0.8",
+    "vue-horizontal": "^0.8.10",
+    "vue-input-tag": "^2.0.7",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-moment": "^4.1.0",
+    "vue-stepper": "^1.4.2",
+    "vue-tabs-component": "^1.5.0",
+    "vue-toastification": "^1.7.11",
+    "vue-truncate-filter": "^1.1.7",
+    "vuejs-datepicker": "^1.6.2",
+    "vuelidate": "^0.7.6",
+    "vuetify": "^2.4.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/laravel-echo": "^1.1.0",
+    "fibers": "^5.0.0",
+    "pretty-checkbox-vue": "^1.1.9",
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1"
+  }
+}
