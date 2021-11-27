@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<PageHeader>
+		<page-header>
 			<div class="col-lg-6 d-flex flex-column align-items-center align-items-lg-start mb-3 mb-lg-0">
 				<h1 class="text-white fw-bold">
 					{{ appSettings.paymentPolicy.settings.page_title }}
@@ -9,7 +9,7 @@
 			<div class="col-lg-6 text-center text-lg-end">
 				<img src="/svgs/payment-policy.svg" alt />
 			</div>
-		</PageHeader>
+		</page-header>
 
 		<section class="section-padding">
 			<div class="container">

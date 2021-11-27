@@ -47,7 +47,6 @@ import ChatItem from "~/components/Layouts/ChatItem.vue";
 import Message from "~/components/Layouts/Message.vue";
 import MultiselectFilter from "~/components/Layouts/MultiselectFilter.vue";
 import OrderCard from "~/components/Layouts/OrderCard.vue";
-import LoadingTabView from "~/components/Layouts/LoadingTabView.vue";
 // Forms
 import Checkbox from "~/components/Forms/Checkbox.vue";
 import AuthForm from "~/components/Forms/AuthForm.vue";
@@ -61,6 +60,8 @@ import SearchBar from "~/components/SearchBar.vue";
 import Errors from "~/components/Errors.vue";
 import Error from "~/components/Error.vue";
 import Loader from "~/components/Layouts/Loader.vue";
+import LoadingTabView from "~/components/Layouts/LoadingTabView.vue";
+import LoadingView from "~/components/Layouts/LoadingView.vue";
 
 // Packages
 import { Tabs, Tab } from "vue-tabs-component";
@@ -77,6 +78,7 @@ Vue.component("tab", Tab);
 
 Vue.component('loader', Loader);
 Vue.component('loading-tab-view', LoadingTabView);
+Vue.component('loading-view', LoadingView);
 Vue.component('page-header', PageHeader);
 Vue.component('card', Card);
 Vue.component('package-card', PackageCard);

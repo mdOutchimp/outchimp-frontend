@@ -1,7 +1,7 @@
 <template>
 	<loading-view :loading="isLoading">
 		<div v-if="order" class="my-4">
-			<PageHeader>
+			<page-header>
 				<div class="col-md-8 d-flex flex-column">
 					<div class>
 						<h3 class="text-white fw-bold mt-2 d-inline-block">
@@ -20,7 +20,7 @@
 						Confirm Order
 					</a>
 				</div>
-			</PageHeader>
+			</page-header>
 
 			<section class="section-padding">
 				<div class="container">

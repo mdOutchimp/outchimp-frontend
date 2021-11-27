@@ -61,7 +61,7 @@
 					</select>
 
 					<div class="mb-3 fs-7 d-flex align-items-center">
-						<Checkbox v-model="formData.agree">
+						<checkbox v-model="formData.agree">
 							I understand the
 							<a href="#" class="text-primary mt-2 ms-auto">Terms and Conditions.</a>
 						</Checkbox>
