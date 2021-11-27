@@ -301,11 +301,11 @@
 					<div class="package-section" v-if="packages.length > 0">
 						<div class="row">
 							<div class="col-lg-3 col-md-4 col-sm-6" v-for="pkg in packages" :key="pkg.id">
-								<PackageCard :id="pkg.id" :src="
+								<package-card :id="pkg.id" :src="
                     pkg.mediaUrl.length
                       ? pkg.mediaUrl
                       : require('@/assets/images/placeholder.jpg')
-                  " :title="pkg.name" :author="pkg.sellerName" :price="pkg.price" class="shadow-sm"></PackageCard>
+                  " :title="pkg.name" :author="pkg.sellerName" :price="pkg.price" class="shadow-sm"></package-card>
 							</div>
 						</div>
 					</div>

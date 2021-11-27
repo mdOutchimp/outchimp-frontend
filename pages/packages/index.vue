@@ -31,11 +31,11 @@
 
 				<div class="row" v-if="laravelData.data && laravelData.data.length > 0">
 					<div class="col-sm-6 col-md-4 col-lg-3" v-for="pkg in laravelData.data" :key="pkg.id">
-						<PackageCard :id="pkg.id" :src="
+						<package-card :id="pkg.id" :src="
                 pkg.mediaUrl.length
                   ? pkg.mediaUrl
                   : require('@/assets/images/placeholder.jpg')
-              " :title="pkg.name" :author="pkg.sellerName" :price="pkg.price"></PackageCard>
+              " :title="pkg.name" :author="pkg.sellerName" :price="pkg.price"></package-card>
 					</div>
 				</div>
 

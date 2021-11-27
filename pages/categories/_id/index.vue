@@ -40,11 +40,11 @@
 					<splide :options="options">
 						<splide-slide v-for="pkg in subCategory.packages" :key="pkg.id">
 							<div>
-								<PackageCard :id="pkg.id" :src="
+								<package-card :id="pkg.id" :src="
                     pkg.mediaUrl.length
                       ? pkg.mediaUrl
                       : require('@/assets/images/placeholder.jpg')
-                  " :title="pkg.name" :author="pkg.sellerName" :price="pkg.price"></PackageCard>
+                  " :title="pkg.name" :author="pkg.sellerName" :price="pkg.price"></package-card>
 							</div>
 						</splide-slide>
 					</splide>

@@ -14,7 +14,7 @@
 			</div>
 		</page-header>
 
-		<SearchBar v-model="search" @search="getResults" />
+		<search-bar v-model="search" @search="getResults" />
 		<!-- Freelancer List -->
 		<section class="section-padding">
 			<div class="container">
@@ -49,11 +49,11 @@
 					<!-- Left side -->
 					<div class="col-lg-9">
 						<!-- Single Freelancer -->
-						<SellerCard :id="seller.id" :name="seller.name" :img="
+						<seller-card :id="seller.id" :name="seller.name" :img="
                 seller.profilePicture
                   ? seller.profilePicture
                   : require('@/assets/images/profile.png')
-              " :jobTitle="seller.jobTitle" location="Kustia, Bangladesh" :skills="seller.skills" :perHour="seller.perHour" :rating="Math.floor(seller.averageRating)" :reviews="seller.totalReview" v-for="seller in laravelData.data" :key="seller.id"></SellerCard>
+              " :jobTitle="seller.jobTitle" location="Kustia, Bangladesh" :skills="seller.skills" :perHour="seller.perHour" :rating="Math.floor(seller.averageRating)" :reviews="seller.totalReview" v-for="seller in laravelData.data" :key="seller.id"></seller-card>
 
 						<pagination class="mt-5 d-none d-md-flex" :limit="3" :data="laravelData" @pagination-change-page="getResults"></pagination>
 						<pagination class="mt-5 d-flex d-md-none" :limit="-1" :data="laravelData" @pagination-change-page="getResults"></pagination>

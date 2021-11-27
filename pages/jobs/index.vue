@@ -14,7 +14,7 @@
 					<img src="@/assets/svgs/job-hunt.svg" alt="" />
 				</div>
 			</page-header>
-			<SearchBar v-model="search" @search="getResults" />
+			<search-bar v-model="search" @search="getResults" />
 
 			<!-- Job List -->
 			<section class="section-padding">
