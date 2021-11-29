@@ -9,26 +9,26 @@
             <div class="card-body">
               <!-- tab items -->
               <div>
-                <nuxt-link to="/sellers/dashboard" class="text-decoration-none"
-                  >Dashboard</nuxt-link
+                <NuxtLink to="/sellers/dashboard" class="text-decoration-none"
+                  >Dashboard</NuxtLink
                 >
                 <span class="px-4">|</span>
-                <nuxt-link
+                <NuxtLink
                   to="/sellers/dashboard/orders"
                   class="text-decoration-none"
-                  >Orders</nuxt-link
+                  >Orders</NuxtLink
                 >
                 <span class="px-4">|</span>
-                <nuxt-link
+                <NuxtLink
                   to="/sellers/dashboard/packages"
                   class="text-decoration-none"
-                  >Packages</nuxt-link
+                  >Packages</NuxtLink
                 >
                 <span class="px-4">|</span>
-                <nuxt-link
+                <NuxtLink
                   to="/sellers/dashboard/bids"
                   class="text-decoration-none"
-                  >Bids</nuxt-link
+                  >Bids</NuxtLink
                 >
               </div>
               <!-- tab items end -->
@@ -59,13 +59,13 @@
                 />
                 <h6 class="mt-2 ms-3 fw-bold">{{ $auth.user.name }}</h6>
               </div>
-              <nuxt-link to="/sellers/profile">
+              <NuxtLink to="/sellers/profile">
                 <button
                   class="btn btn-outline-primary rounded-pill px-4 btn-sm fs-8 ms-3"
                 >
                   Edit
                 </button>
-              </nuxt-link>
+              </NuxtLink>
             </div>
 
             <!-- Profile details -->
@@ -129,7 +129,7 @@ export default {
 </script>
 
 <style lang="scss">
-.nuxt-link-exact-active {
+.NuxtLink-exact-active {
   font-weight: bold;
   font-size: 1.2rem;
 }

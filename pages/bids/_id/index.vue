@@ -63,9 +63,9 @@
                         " class="rounded-circle" style="height: 120px; border-radius: 50%" alt />
 										</div>
 										<div class="mt-3 text-center" v-if="bid">
-											<nuxt-link :to="`/sellers/${bid.sellerId}`" class="text-black text-decoration-none">
+											<NuxtLink :to="`/sellers/${bid.sellerId}`" class="text-black text-decoration-none">
 												<h5 class="fw-bold">{{ bid.seller.name }}</h5>
-											</nuxt-link>
+											</NuxtLink>
 											<p class="fw-semibold">
 												<i class="fas fa-star text-primary fa-fw"></i>
 												<span class="ps-1">
@@ -91,7 +91,7 @@
 										</div>
 									</div>
 
-									<nuxt-link :to="`/orders/create?type=job&id=${bid.jobId}`" v-if="$auth.loggedIn & ($auth.user.type == 'buyer')" class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-4 w-100">Accept</nuxt-link>
+									<NuxtLink :to="`/orders/create?type=job&id=${bid.jobId}`" v-if="$auth.loggedIn & ($auth.user.type == 'buyer')" class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-4 w-100">Accept</NuxtLink>
 								</div>
 							</div>
 						</div>

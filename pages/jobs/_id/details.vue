@@ -21,9 +21,9 @@
 					</h5>
 				</div>
 				<div class="col-md-4 justify-content-end d-flex text-md-end" v-if="$auth.loggedIn">
-					<nuxt-link class="btn btn-primary px-4 me-2 text-decoration-none" v-if="$auth.user.type == 'seller'" :to="`/bids/create?job=${job.id}`">
+					<NuxtLink class="btn btn-primary px-4 me-2 text-decoration-none" v-if="$auth.user.type == 'seller'" :to="`/bids/create?job=${job.id}`">
 						<span>Bid Now</span>
-					</nuxt-link>
+					</NuxtLink>
 					<button class="btn btn-primary" @click="handleStatusChange('open')" v-if="job.status == 'draft' || job.status == 'closed'">
 						Open Job
 					</button>
@@ -99,7 +99,7 @@
 
 									<ul class="ps-3 mt-3" v-if="relatedJobs.length">
 										<li class="lh-lg" v-for="singleJob in buyerJobs" :key="singleJob.id">
-											<nuxt-link class="text-decoration-none" :to="'/jobs/' + singleJob.id">{{ singleJob.title }}</nuxt-link>
+											<NuxtLink class="text-decoration-none" :to="'/jobs/' + singleJob.id">{{ singleJob.title }}</NuxtLink>
 										</li>
 									</ul>
 									<div class="text-grey" v-else>No jobs found</div>

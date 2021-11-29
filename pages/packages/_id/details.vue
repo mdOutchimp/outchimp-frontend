@@ -106,8 +106,8 @@
 									</div>
 									<div class="mt-3 text-center" v-if="seller">
 										<h5 class="fw-bold">
-											<nuxt-link :to="`/sellers/${seller.id}`" class="text-black text-decoration-none">{{ seller.name }}
-											</nuxt-link>
+											<NuxtLink :to="`/sellers/${seller.id}`" class="text-black text-decoration-none">{{ seller.name }}
+											</NuxtLink>
 										</h5>
 
 										<p class="fw-semibold">

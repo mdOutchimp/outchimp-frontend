@@ -18,17 +18,17 @@
 					<h5 class="fw-bold text-white">About</h5>
 					<ul class="footer-widget">
 						<li>
-							<nuxt-link to="/about/privacy-policy" class="text-grey text-decoration-none">Privacy Policy</nuxt-link>
+							<NuxtLink to="/about/privacy-policy" class="text-grey text-decoration-none">Privacy Policy</NuxtLink>
 						</li>
 
 						<li>
-							<nuxt-link to="/about/terms-and-conditions" class="text-grey text-decoration-none">Terms & Conditions</nuxt-link>
+							<NuxtLink to="/about/terms-and-conditions" class="text-grey text-decoration-none">Terms & Conditions</NuxtLink>
 						</li>
 						<li>
-							<nuxt-link to="/about/payment-policy" class="text-grey text-decoration-none">Payment Policy</nuxt-link>
+							<NuxtLink to="/about/payment-policy" class="text-grey text-decoration-none">Payment Policy</NuxtLink>
 						</li>
 						<li>
-							<nuxt-link to="/about/refund-policy" class="text-grey text-decoration-none">Refund Policy</nuxt-link>
+							<NuxtLink to="/about/refund-policy" class="text-grey text-decoration-none">Refund Policy</NuxtLink>
 						</li>
 					</ul>
 				</div>
@@ -68,9 +68,9 @@
 			<div class="row border-top p-3">
 				<div class="col-sm-6 footer__copyright" v-if="mySettings">
 					<h4 class="d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
-						<nuxt-link to="/" class="text-decoration-none text-grey">
+						<NuxtLink to="/" class="text-decoration-none text-grey">
 							{{ mySettings.websiteSettings.settings.footer }}
-						</nuxt-link>
+						</NuxtLink>
 					</h4>
 				</div>
 				<div class="col-sm-6 footer__social">

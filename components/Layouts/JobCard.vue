@@ -4,11 +4,11 @@
       <div class="col-md-8 d-flex flex-column">
         <div class="mb-2">
           <h5 class="d-inline-block job-card__title fw-bold">
-            <nuxt-link
+            <NuxtLink
               :to="`jobs/${job.id}`"
               class="text-black text-decoration-none"
               >{{ job.title }}
-            </nuxt-link>
+            </NuxtLink>
           </h5>
 
           <small class="mx-2" v-if="job.daysLeft > 0"
@@ -49,12 +49,12 @@
           <small>Bids</small>
         </div>
         <div class="mt-2">
-          <nuxt-link
+          <NuxtLink
             :to="`jobs/${job.id}`"
             class="btn btn-outline-primary rounded-pill py-2 px-3 text-decoration-none"
           >
             View Details
-          </nuxt-link>
+          </NuxtLink>
         </div>
       </div>
     </div>

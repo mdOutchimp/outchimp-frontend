@@ -69,12 +69,12 @@
               </div>
 
               <div class="d-flex justify-content-between mt-4">
-                <nuxt-link
+                <NuxtLink
                   :to="`/jobs/${this.$route.query.job}`"
                   class="text-primary border-0 rounded-0 bg-transparent px-5 fw-bold text-decoration-none"
                 >
                   Cancel
-                </nuxt-link>
+                </NuxtLink>
 
                 <button type="submit" class="btn btn-primary rounded-0 px-5">
                   Save

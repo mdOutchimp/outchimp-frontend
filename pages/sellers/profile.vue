@@ -351,7 +351,7 @@
 					</div>
 
 					<div v-else class="text-center">
-						<nuxt-link to="/packages/create" class="btn btn-outline-primary text-decoration-none">Add A Package</nuxt-link>
+						<NuxtLink to="/packages/create" class="btn btn-outline-primary text-decoration-none">Add A Package</NuxtLink>
 					</div>
 				</div>
 			</section>

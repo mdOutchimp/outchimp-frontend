@@ -15,11 +15,11 @@
           </div>
           <div class="mt-2 mt-md-0">
             <h5 class="d-inline-block job-card__title fw-bold">
-              <nuxt-link
+              <NuxtLink
                 :to="`/sellers/${id}`"
                 class="text-black text-decoration-none"
                 >{{ name }}
-              </nuxt-link>
+              </NuxtLink>
             </h5>
             <p class="text-justify fw-light mb-1">{{ jobTitle }}</p>
             <p class="text-justify mt-2 fw-4">
@@ -50,12 +50,12 @@
           <small>({{ reviews }})</small>
         </div>
         <div class="mt-2">
-          <nuxt-link
+          <NuxtLink
             :to="`/sellers/${id}`"
             class="btn btn-outline-primary text-decoration-none rounded-pill px-4 mt-2"
           >
             View
-          </nuxt-link>
+          </NuxtLink>
         </div>
       </div>
     </div>

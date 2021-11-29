@@ -48,14 +48,14 @@
             <span>৳-</span> {{ order.amount }}
           </h5>
         </div>
-        <nuxt-link
+        <NuxtLink
           class="mt-auto btn rounded-pill px-4 btn-outline-primary btn fs-7 fw-bold ms-lg-3 text-decoration-none"
           :to="
             $auth.user.type === 'seller'
               ? `/orders/${order.id}`
               : `/orders/${order.id}/details`
           "
-          >View</nuxt-link
+          >View</NuxtLink
         >
       </div>
     </div>

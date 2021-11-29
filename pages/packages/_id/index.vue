@@ -112,8 +112,8 @@
 									</div>
 									<div class="mt-3 text-center" v-if="seller">
 										<h5 class="fw-bold">
-											<nuxt-link :to="`/sellers/${seller.id}`" class="text-black text-decoration-none">{{ seller.name }}
-											</nuxt-link>
+											<NuxtLink :to="`/sellers/${seller.id}`" class="text-black text-decoration-none">{{ seller.name }}
+											</NuxtLink>
 										</h5>
 
 										<p class="fw-semibold">
@@ -138,12 +138,12 @@
 									</div>
 								</div>
 
-								<nuxt-link v-if="$auth.loggedIn && $auth.user.type !== 'seller'" :to="`/orders/create?type=package&id=${pkg.id}`" class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-4 w-100">
+								<NuxtLink v-if="$auth.loggedIn && $auth.user.type !== 'seller'" :to="`/orders/create?type=package&id=${pkg.id}`" class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-4 w-100">
 									Order Now
-								</nuxt-link>
-								<nuxt-link v-else :to="`/signup`" class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-4 w-100">
+								</NuxtLink>
+								<NuxtLink v-else :to="`/signup`" class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-4 w-100">
 									Become a Buyer
-								</nuxt-link>
+								</NuxtLink>
 							</div>
 						</div>
 					</div>

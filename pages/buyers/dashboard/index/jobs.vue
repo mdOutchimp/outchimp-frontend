@@ -16,11 +16,11 @@
       >
         <div class="row">
           <div class="d-sm-flex justify-content-between">
-            <nuxt-link class="text-decoration-none" :to="`/jobs/${job.id}`">
+            <NuxtLink class="text-decoration-none" :to="`/jobs/${job.id}`">
               <h6 class="fw-bold fs-5 mb-0">
                 {{ job.title }}
               </h6>
-            </nuxt-link>
+            </NuxtLink>
             <span
               class="d-inline-block fw-bold fs-7 mt-1 mt-sm-0"
               v-if="job.type == 'fixed'"
@@ -64,16 +64,16 @@
             </div>
 
             <div>
-              <nuxt-link
+              <NuxtLink
                 class="fs-7 text-end fw-bold mt-2 mt-sm-0 mt-lg-auto text-decoration-none btn btn-sm btn-outline-primary rounded-pill px-4"
                 :to="`/jobs/${job.id}/details`"
-                >View</nuxt-link
+                >View</NuxtLink
               >
-              <nuxt-link
+              <NuxtLink
                 class="fs-7 text-end fw-bold mt-2 mt-sm-0 mt-lg-auto text-decoration-none btn btn-sm btn-outline-secondary rounded-pill px-4"
                 :to="`/jobs/${job.id}/edit`"
                 v-if="job.status.toUpperCase() === 'DRAFT'"
-                >Edit</nuxt-link
+                >Edit</NuxtLink
               >
             </div>
           </div>

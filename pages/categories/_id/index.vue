@@ -15,9 +15,9 @@
 				<splide :options="subCategoryOptions">
 					<splide-slide v-for="subCategory in allSubCategories" :key="subCategory.value">
 						<div class="py-2">
-							<nuxt-link :to="`/packages?subCategory=${subCategory.value}`" class="subCategoryButton shadow-sm fs-7 text-grey">
+							<NuxtLink :to="`/packages?subCategory=${subCategory.value}`" class="subCategoryButton shadow-sm fs-7 text-grey">
 								{{ subCategory.display }}
-							</nuxt-link>
+							</NuxtLink>
 						</div>
 					</splide-slide>
 				</splide>
@@ -31,9 +31,9 @@
 							{{ subCategory.name }}
 						</p>
 
-						<nuxt-link :to="`/packages?subCategory=${subCategory.id}`" class="mt-2 fw-bold text-primary text-decoration-none">
+						<NuxtLink :to="`/packages?subCategory=${subCategory.id}`" class="mt-2 fw-bold text-primary text-decoration-none">
 							See More <i class="fas fa-angle-right"></i>
-						</nuxt-link>
+						</NuxtLink>
 					</div>
 
 					<!-- Packages loop -->

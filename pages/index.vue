@@ -38,7 +38,7 @@
               v-for="category in categories"
               :key="category.id"
             >
-              <nuxt-link
+              <NuxtLink
                 :to="`categories/${category.id}`"
                 class="text-decoration-none"
               >
@@ -61,7 +61,7 @@
                     {{ category.description }}
                   </p>
                 </div>
-              </nuxt-link>
+              </NuxtLink>
             </div>
           </div>
         </div>

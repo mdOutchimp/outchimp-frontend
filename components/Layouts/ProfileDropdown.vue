@@ -12,19 +12,19 @@
     <!-- <i class="fas fa-caret-down ms-2"></i> -->
     <ul class="dropdown__items shadow-sm" v-if="show">
       <li class="dropdown__item" v-if="$auth.user.type == 'seller'">
-        <nuxt-link to="/sellers/profile">Profile</nuxt-link>
-        <!-- <nuxt-link to="/buyers/profile" v-if="$auth.user.type == 'buyer'">Profile</nuxt-link> -->
+        <NuxtLink to="/sellers/profile">Profile</NuxtLink>
+        <!-- <NuxtLink to="/buyers/profile" v-if="$auth.user.type == 'buyer'">Profile</NuxtLink> -->
       </li>
       <li class="dropdown__item">
-        <nuxt-link to="/sellers/dashboard" v-if="$auth.user.type == 'seller'"
-          >Dashboard</nuxt-link
+        <NuxtLink to="/sellers/dashboard" v-if="$auth.user.type == 'seller'"
+          >Dashboard</NuxtLink
         >
-        <nuxt-link to="/buyers/dashboard" v-if="$auth.user.type == 'buyer'"
-          >Dashboard</nuxt-link
+        <NuxtLink to="/buyers/dashboard" v-if="$auth.user.type == 'buyer'"
+          >Dashboard</NuxtLink
         >
       </li>
       <li class="dropdown__item">
-        <nuxt-link to="/sellers/chat" v-if="$auth.user.type == 'seller'"
+        <NuxtLink to="/sellers/chat" v-if="$auth.user.type == 'seller'"
           ><span class="position-relative">
             <span class="d-inline-block">Messages</span>
             <span
@@ -32,8 +32,8 @@
               v-if="$store.unreadNotification"
             ></span>
           </span>
-        </nuxt-link>
-        <nuxt-link to="/buyers/chat" v-if="$auth.user.type == 'buyer'">
+        </NuxtLink>
+        <NuxtLink to="/buyers/chat" v-if="$auth.user.type == 'buyer'">
           <span class="position-relative">
             <span class="d-inline-block">Messages</span>
             <span
@@ -41,19 +41,19 @@
               v-if="$store.unreadNotification"
             ></span>
           </span>
-        </nuxt-link>
+        </NuxtLink>
       </li>
       <li class="dropdown__item">
-        <nuxt-link to="/jobs/create" v-if="$auth.user.type == 'buyer'"
-          >Post A Job</nuxt-link
+        <NuxtLink to="/jobs/create" v-if="$auth.user.type == 'buyer'"
+          >Post A Job</NuxtLink
         >
-        <nuxt-link to="/packages/create" v-if="$auth.user.type == 'seller'"
-          >Create Package</nuxt-link
+        <NuxtLink to="/packages/create" v-if="$auth.user.type == 'seller'"
+          >Create Package</NuxtLink
         >
       </li>
 
       <li class="dropdown__item" v-if="$auth.user.type == 'seller'">
-        <nuxt-link to="/sellers/withdraw">Withdraw</nuxt-link>
+        <NuxtLink to="/sellers/withdraw">Withdraw</NuxtLink>
       </li>
 
       <li class="dropdown__item">

@@ -68,7 +68,7 @@ import "simplebar/dist/simplebar.min.css";
 
 export default {
 	layout: "chat",
-	middleware: "buyer",
+	middleware: ["auth", "buyer", "verified"],
 	name: "buyer-chat",
 	components: {
 		simplebar,

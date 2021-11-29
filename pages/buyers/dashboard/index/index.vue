@@ -20,9 +20,9 @@
           >
             <i class="fas fa-envelope fs-3 text-primary"></i>
             <div class="ms-3">
-              <nuxt-link to="/buyers/chat" class="text-decoration-none">
+              <NuxtLink to="/buyers/chat" class="text-decoration-none">
                 <h6>Unread messages</h6>
-              </nuxt-link>
+              </NuxtLink>
               <h5 class="fs-5 fw-bold mb-0">
                 {{ dashboardData.unreadMessages }}
               </h5>
@@ -58,12 +58,12 @@
       >
         <div class="row">
           <div class="d-md-flex justify-content-between">
-            <nuxt-link
+            <NuxtLink
               class="fs-7 fw-bold mt-lg-auto text-decoration-none"
               :to="'/jobs/' + job.id"
             >
               <h6 class="fw-bold fs-5 mb-0">{{ job.title }}</h6>
-            </nuxt-link>
+            </NuxtLink>
 
             <span
               class="d-inline-block fw-bold fs-7"

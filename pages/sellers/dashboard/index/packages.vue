@@ -17,12 +17,12 @@
           </div>
 
           <div>
-            <nuxt-link :to="`/packages/create`">
+            <NuxtLink :to="`/packages/create`">
               <button class="btn btn-primary btn-sm fs-7">
                 <i class="fas fa-plus"></i>
                 <span class="fs-7 ms-1">New Package</span>
               </button>
-            </nuxt-link>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
                 "
               >
                 <div class="mb-2 d-flex" >
-                  <nuxt-link :to="`/packages/${pkg.id}/details`"  class="fs-6 h-5 text-start fw-bold mb-0 me-2">{{ pkg.name }}</nuxt-link>
+                  <NuxtLink :to="`/packages/${pkg.id}/details`"  class="fs-6 h-5 text-start fw-bold mb-0 me-2">{{ pkg.name }}</NuxtLink>
                   <span class="text-uppercase fs-8 badge bg-primary">{{pkg.status}}</span>
                 </div>
 
@@ -99,7 +99,7 @@
             </div>
 
             <div class="mt-md-4 mt-lg-auto">
-              <nuxt-link
+              <NuxtLink
                 class="
                   fs-7
                   fw-bold
@@ -111,7 +111,7 @@
                   <i class="fas fa-edit fs-7"></i>
                 </span>
                 Edit
-              </nuxt-link>
+              </NuxtLink>
               <button class="ms-4 btn btn-outline-danger btn-sm" @click="destroy(pkg.id, index)">
                 <i class="fas fa-trash me-2"></i>Archive
               </button>

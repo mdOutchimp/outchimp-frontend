@@ -25,9 +25,9 @@
 					</div>
 				</div>
 				<div class="col-md-4 text-center text-sm-start text-md-end mt-2 mt-md-0">
-					<nuxt-link :to="`/buyers/chat?sellerId=${seller.id}`" class="btn btn-outline-primary px-4 rounded-pill mt-1 mt-md-0 text-decoration-none">
+					<NuxtLink :to="`/buyers/chat?sellerId=${seller.id}`" class="btn btn-outline-primary px-4 rounded-pill mt-1 mt-md-0 text-decoration-none">
 						<span>Contact Me</span>
-					</nuxt-link>
+					</NuxtLink>
 				</div>
 			</page-header>
 

@@ -20,10 +20,10 @@
                 class="mt-2 mt-md-0 d-flex flex-column justify-content-between"
               >
                 <h5 class="d-inline-block job-card__title fw-bold mb-0">
-                  <nuxt-link
+                  <NuxtLink
                     :to="`/seller/${bid.seller.id}`"
                     class="text-black text-decoration-none"
-                    >{{ `${bid.seller.name}` }}</nuxt-link
+                    >{{ `${bid.seller.name}` }}</NuxtLink
                   >
                   <span class="badge bg-primary rounded-pill mx-2">{{
                     bid.status | capitalize
@@ -44,12 +44,12 @@
               <small class="ms-1">/hr</small>
             </div>
 
-            <nuxt-link
+            <NuxtLink
               :to="`/bids/${bid.id}`"
               class="btn btn-outline-primary text-decoration-none rounded-pill py-1 px-3 mt-2 mt-md-0"
             >
               View
-            </nuxt-link>
+            </NuxtLink>
           </div>
         </div>
       </div>

@@ -155,12 +155,12 @@
                 <button type="submit" class="btn btn-primary rounded-0 px-5">
                   Save
                 </button>
-                <nuxt-link
+                <NuxtLink
                   to="/buyers/dashboard"
                   class="text-primary border-0 rounded-0 bg-transparent px-5 fw-bold text-decoration-none"
                 >
                   Cancel
-                </nuxt-link>
+                </NuxtLink>
               </div>
             </form>
           </div>

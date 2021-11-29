@@ -11,10 +11,22 @@ export default function ({
         store.dispatch("validation/setErrors", JSON.parse(error.response.data));
       }
     }
-    return Promise.reject(error);
+
+    // Check server error
+    if (err.response.status === 500) {
+      error({ statusCode: err.response.status, message: "Server error." })
+    }
+
+    store.dispatch("global/setRequestProcessing", false);
+    return Promise.reject(err);
   });
 
   $axios.onRequest(() => {
     store.dispatch("validation/clearErrors");
+    store.dispatch("global/setRequestProcessing", true);
+  });
+
+  $axios.onResponse(() => {
+    store.dispatch("global/setRequestProcessing", false);
   });
 }

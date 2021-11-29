@@ -40,10 +40,10 @@
             </a>
             <ul class="menu-dropdown">
               <li class="menu-dropdown__item">
-                <nuxt-link to="/buyers/signin">As a Buyer</nuxt-link>
+                <NuxtLink to="/buyers/signin">As a Buyer</NuxtLink>
               </li>
               <li class="menu-dropdown__item">
-                <nuxt-link to="/sellers/signin">As a Seller</nuxt-link>
+                <NuxtLink to="/sellers/signin">As a Seller</NuxtLink>
               </li>
             </ul>
           </li>
@@ -95,42 +95,42 @@
           </div>
           <ul class="sidebar__links">
             <li class="sidebar__item px-2" v-if="$auth.user.type == 'seller'">
-              <nuxt-link to="/sellers/profile">Profile</nuxt-link>
+              <NuxtLink to="/sellers/profile">Profile</NuxtLink>
             </li>
 
             <li class="sidebar__item px-2">
-              <nuxt-link
+              <NuxtLink
                 to="/sellers/dashboard"
                 v-if="$auth.user.type == 'seller'"
-                >Dashboard</nuxt-link
+                >Dashboard</NuxtLink
               >
-              <nuxt-link
+              <NuxtLink
                 to="/buyers/dashboard"
                 v-if="$auth.user.type == 'buyer'"
-                >Dashboard</nuxt-link
+                >Dashboard</NuxtLink
               >
             </li>
             <li class="sidebar__item px-2">
-              <nuxt-link to="/sellers/chat" v-if="$auth.user.type == 'seller'"
-                >Messages</nuxt-link
+              <NuxtLink to="/sellers/chat" v-if="$auth.user.type == 'seller'"
+                >Messages</NuxtLink
               >
-              <nuxt-link to="/buyers/chat" v-if="$auth.user.type == 'buyer'"
-                >Messages</nuxt-link
+              <NuxtLink to="/buyers/chat" v-if="$auth.user.type == 'buyer'"
+                >Messages</NuxtLink
               >
             </li>
             <li class="sidebar__item px-2">
-              <nuxt-link to="/jobs/create" v-if="$auth.user.type == 'buyer'"
-                >Post A Job</nuxt-link
+              <NuxtLink to="/jobs/create" v-if="$auth.user.type == 'buyer'"
+                >Post A Job</NuxtLink
               >
-              <nuxt-link
+              <NuxtLink
                 to="/packages/create"
                 v-if="$auth.user.type == 'seller'"
-                >Create Package</nuxt-link
+                >Create Package</NuxtLink
               >
             </li>
 
             <li class="sidebar__item px-2" v-if="$auth.user.type == 'seller'">
-              <nuxt-link to="/sellers/withdraw">Withdraw</nuxt-link>
+              <NuxtLink to="/sellers/withdraw">Withdraw</NuxtLink>
             </li>
 
             <li class="sidebar__item px-2">
@@ -195,14 +195,14 @@
         </ul>
 
         <div class="px-3 py-2 mb-3">
-          <nuxt-link
+          <NuxtLink
             tag="button"
             v-if="!$auth.loggedIn"
             to="/signup"
             class="btn btn-primary w-100 rounded-pill text-white"
           >
             Join
-          </nuxt-link>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -254,7 +254,7 @@ export default {
 };
 </script>
 <style lang="scss">
-a.nuxt-link-exact-active {
+a.NuxtLink-exact-active {
   color: #1dbf73 !important;
 }
 

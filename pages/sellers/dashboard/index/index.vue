@@ -130,10 +130,10 @@
                     <span>৳-</span> {{ order.amount }}
                   </h5>
                 </div>
-                <nuxt-link
+                <NuxtLink
                   class="btn rounded-pill px-4 btn-outline-primary btn fs-7 fw-bold ms-lg-3 text-decoration-none mt-auto"
                   :to="`/orders/${order.id}`"
-                  >View</nuxt-link
+                  >View</NuxtLink
                 >
               </div>
             </div>
