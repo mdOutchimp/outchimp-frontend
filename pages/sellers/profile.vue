@@ -426,7 +426,7 @@ import EditDevice from "@/components/Profiles/Seller/EditDevice.vue";
 
 export default {
 	name: "SellerProfile",
-	middleware: ["auth", "seller"],
+	middleware: ["auth", "seller", "verified"],
 	data() {
 		return {
 			editProfilePicture: false,

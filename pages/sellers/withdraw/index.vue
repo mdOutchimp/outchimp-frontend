@@ -65,7 +65,7 @@ import WithdrawBalance from "@/components/Profiles/Seller/WithdrawBalance.vue";
 
 export default {
 	name: "Withdraw",
-	middleware: ["auth", "seller"],
+	middleware: ["auth", "seller", "verified"],
 	components: { WithdrawBalance },
 	data() {
 		return {

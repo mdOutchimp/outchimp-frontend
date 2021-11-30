@@ -147,7 +147,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-	middleware: ["auth", "seller"],
+	middleware: ["auth", "seller", "verified"],
 	data() {
 		return {
 			pkg: {
