@@ -16,7 +16,7 @@
 						</div>
 
 						<div class="mb-3">
-							<CountryInput rules="required" label="Country" name="Country" v-model="address.country" />
+							<country-input rules="required" label="Country" name="Country" v-model="address.country"></country-input>
 						</div>
 
 						<div class="mb-3">

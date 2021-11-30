@@ -6,12 +6,11 @@
 				<div class="col-6 col-md-3 mb-3 mb-md-0">
 					<h5 class="fw-bold text-white">Categories</h5>
 					<ul class="footer-widget">
-						<li>
-							<a href="#" class="text-grey text-decoration-none">Photography</a>
-						</li>
-						<li>
-							<a href="#" class="text-grey text-decoration-none">Videography</a>
-						</li>
+						<template v-for="category in categories">
+							<li :key="category.id" class="" v-if="category.showOnMenu == 1">
+								<NuxtLink :to="`/categories/${category.id}`" class="text-grey text-decoration-none">{{category.name}}</NuxtLink>
+							</li>
+						</template>
 					</ul>
 				</div>
 				<div class="col-6 col-md-3 mb-3 mb-md-0">
@@ -34,7 +33,7 @@
 				</div>
 
 				<div class="col-6 col-md-3 mb-3 mb-md-0">
-					<h5 class="fw-bold text-white">Comnunity</h5>
+					<h5 class="fw-bold text-white">Community</h5>
 					<ul class="footer-widget">
 						<li>
 							<a href="#" class="text-grey text-decoration-none">Forum</a>
@@ -51,16 +50,16 @@
 					<h5 class="fw-bold text-white">Support</h5>
 					<ul class="footer-widget">
 						<li>
-							<a href="#" class="text-grey text-decoration-none">Help & Support</a>
+							<nuxt-link to="/support/help-and-support" class="text-grey text-decoration-none">Help & Support</nuxt-link>
 						</li>
 						<li>
-							<a href="#" class="text-grey text-decoration-none">Selling Guide</a>
+							<nuxt-link to="/support/selling-guide" class="text-grey text-decoration-none">Selling Guide</nuxt-link>
 						</li>
 						<li>
-							<a href="#" class="text-grey text-decoration-none">Buying Guide</a>
+							<nuxt-link to="/support/buying-guide" class="text-grey text-decoration-none">Buying Guide</nuxt-link>
 						</li>
 						<li>
-							<a href="#" class="text-grey text-decoration-none">Trust & Safety</a>
+							<nuxt-link to="/support/trust-and-safety" class="text-grey text-decoration-none">Trust & Safety</nuxt-link>
 						</li>
 					</ul>
 				</div>
@@ -89,10 +88,20 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
+	data() {
+		return {
+			categories: [],
+		};
+	},
 	computed: {
 		...mapGetters({
 			mySettings: ["settings/getSettings"],
 		}),
+	},
+	// fetching categories
+	async fetch() {
+		const rescategories = await this.$axios.$get("/categories");
+		this.categories = rescategories.data;
 	},
 };
 </script>

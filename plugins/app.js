@@ -47,6 +47,7 @@ import ChatItem from "~/components/Layouts/ChatItem.vue";
 import Message from "~/components/Layouts/Message.vue";
 import MultiselectFilter from "~/components/Layouts/MultiselectFilter.vue";
 import OrderCard from "~/components/Layouts/OrderCard.vue";
+
 // Forms
 import Checkbox from "~/components/Forms/Checkbox.vue";
 import AuthForm from "~/components/Forms/AuthForm.vue";
@@ -54,6 +55,7 @@ import TextInput from "~/components/Forms/TextInput.vue";
 import TextareaInput from "~/components/Forms/TextareaInput.vue";
 import DateInput from "~/components/Forms/DateInput.vue";
 import MultiselectInput from "~/components/Forms/MultiselectInput.vue";
+import CountryInput from "~/components/Forms/CountryInput.vue";
 
 // Others
 import SearchBar from "~/components/SearchBar.vue";
@@ -95,6 +97,7 @@ Vue.component('textarea-input', TextareaInput);
 Vue.component('date-input', DateInput);
 Vue.component('multiselect-input', MultiselectInput);
 Vue.component('multiselect-filter', MultiselectFilter);
+Vue.component('country-input', CountryInput);
 
 Vue.component('profile-dropdown', ProfileDropdown);
 Vue.component('errors', Errors);

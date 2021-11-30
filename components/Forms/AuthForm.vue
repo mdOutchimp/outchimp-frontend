@@ -40,10 +40,10 @@
 				</select>
 
 				<div class="mb-3 fs-7 d-flex align-items-center">
-					<checkbox v-model="formData.agree">
-						I understand the
-						<a href="/about/terms-and-conditions" class="text-primary mt-2 ms-auto">Terms and Conditions.</a>
-					</Checkbox>
+					<checkbox v-model="formData.agree"></checkbox>
+					<p class="mt-2">I understand the
+						<nuxt-link to="/about/terms-and-conditions" class="text-primary">Terms and Conditions.</nuxt-link>
+					</p>
 				</div>
 
 				<button :disabled="isRequestProcessing" class="btn btn-primary rounded-0 mb-3 w-100 py-2" @click="register()">
