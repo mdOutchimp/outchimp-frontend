@@ -150,4 +150,9 @@ export default {
 		cursor: pointer;
 	}
 }
+
+.nuxt-link-exact-active {
+	color: #1dbf73;
+	font-weight: bold;
+}
 </style>

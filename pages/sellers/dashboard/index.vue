@@ -106,8 +106,8 @@ export default {
 </script>
 
 <style lang="scss">
-.NuxtLink-exact-active {
+.nuxt-link-exact-active {
+	color: #1dbf73;
 	font-weight: bold;
-	font-size: 1.2rem;
 }
 </style>
