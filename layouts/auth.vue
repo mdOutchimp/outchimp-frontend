@@ -20,6 +20,15 @@ export default {
 	components: {
 		Menu,
 	},
+	async fetch() {
+		try {
+			await this.$store.dispatch("global/setGlobalState", {
+				url: "/config",
+			});
+		} catch (error) {
+			console.error(error);
+		}
+	},
 };
 </script>
 

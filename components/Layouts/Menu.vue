@@ -148,13 +148,13 @@ export default {
 	data() {
 		return {
 			sidebar: false,
-			categories: [],
 		};
 	},
 
 	computed: {
 		...mapGetters({
 			appSettings: ["settings/getSettings"],
+			categories: "global/getMenuCategories",
 		}),
 	},
 
@@ -178,11 +178,6 @@ export default {
 		sellerLogout() {
 			this.$auth.logout("local");
 		},
-	},
-	// fetching categories
-	async fetch() {
-		const rescategories = await this.$axios.$get("/categories");
-		this.categories = rescategories.data;
 	},
 };
 </script>

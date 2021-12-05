@@ -2,12 +2,7 @@
 	<loading-view :loading="isLoading">
 		<div>
 			<page-header>
-				<div class="
-            d-flex
-            justify-content-between
-            align-items-center align-items-start
-            py-3
-          ">
+				<div class="d-flex justify-content-between align-items-center align-items-start py-3">
 					<div>
 						<h2 class="text-white fw-bold">Earnings</h2>
 						<h5 class="text-white">Do more, Earn More!!</h5>
@@ -33,7 +28,7 @@
 												<span>৳</span> {{ $auth.user.balance }}
 											</p>
 										</div>
-										<div>
+										<div v-if="$auth.user.balance > 0">
 											<button @click="withdrawModal = true" class="btn btn-primary border-0 outline-none">
 												Withdraw
 											</button>

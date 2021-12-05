@@ -88,20 +88,11 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-	data() {
-		return {
-			categories: [],
-		};
-	},
 	computed: {
 		...mapGetters({
 			mySettings: ["settings/getSettings"],
+			categories: "global/getMenuCategories",
 		}),
-	},
-	// fetching categories
-	async fetch() {
-		const rescategories = await this.$axios.$get("/categories");
-		this.categories = rescategories.data;
 	},
 };
 </script>

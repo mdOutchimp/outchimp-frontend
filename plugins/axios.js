@@ -12,13 +12,8 @@ export default function ({
       }
     }
 
-    // Check server error
-    if (err.response.status === 500) {
-      error({ statusCode: err.response.status, message: "Server error." })
-    }
-
     store.dispatch("global/setRequestProcessing", false);
-    return Promise.reject(err);
+    return Promise.reject(error);
   });
 
   $axios.onRequest(() => {
