@@ -161,7 +161,7 @@ export default {
 
 		// Get the related jobs
 		this.relatedJobs = await this.$axios.$get(
-			`jobs/buyers/${this.job.buyer.id}?status=active&limit=5`
+			`jobs/buyers/${this.job.buyer.id}?status=open&limit=5`
 		);
 
 		// Get similar Jobs

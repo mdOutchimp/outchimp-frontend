@@ -69,7 +69,7 @@
 							<div>
 								<div class="row">
 									<div class="d-flex align-items-center border-bottom pb-3">
-										<img src="@/assets/images/users/user-2.png" class="rounded-circle" style="width: 45px" alt="" />
+										<img :src="bid.seller.profilePicture || require('@/assets/images/profile.png')" class="rounded-circle" style="width: 45px" alt="" />
 										<div class="ms-2 flex-grow-1">
 											<div class="d-flex justify-content-between">
 												<h6 class="fw-bold mb-0">

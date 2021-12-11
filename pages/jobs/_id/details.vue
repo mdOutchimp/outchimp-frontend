@@ -125,7 +125,6 @@ export default {
 		return {
 			job: null,
 			relatedJobs: [],
-			// Edit status
 			editDesc: false,
 			editAttachments: false,
 		};
