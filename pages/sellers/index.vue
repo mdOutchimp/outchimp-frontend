@@ -24,13 +24,13 @@
 							<span class="me-2">
 								<i class="fas fa-list text-primary"></i>
 							</span>
-							<select name id class="border-0 bg-transparent outline-none">
+							<!-- <select name id class="border-0 bg-transparent outline-none">
 								<option value>Newest First</option>
 								<option value>Lowest Budget First</option>
 								<option value>Highest Budget First</option>
 								<option value>Lowest Bids First</option>
 								<option value>Highest Bids First</option>
-							</select>
+							</select> -->
 						</div>
 						<div class="ms-auto d-block d-lg-none">
 							<a @click.prevent="showFilter = true" type="button" class="text-decoration-none text-black">

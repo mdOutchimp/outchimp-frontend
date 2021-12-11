@@ -14,9 +14,6 @@
 						<div class="ms-sm-2 mt-3 mt-sm-0 d-flex flex-column align-items-center align-items-sm-start">
 							<div class="d-flex">
 								<h3 class="text-white fw-bold me-1">{{ seller.name }}</h3>
-								<!-- <span class="badge bg-primary align-self-start rounded-pill"
-                >Verified</span
-              > -->
 							</div>
 							<h5 class="text-white">
 								<span>{{ seller.jobTitle }}</span>
@@ -189,7 +186,7 @@
 												{{ seller.address.city }},
 												{{ seller.address.country }}
 											</div>
-											<div v-else>No data</div>
+											<div class="ms-auto" v-else>No Data</div>
 										</div>
 
 										<div class="d-flex">

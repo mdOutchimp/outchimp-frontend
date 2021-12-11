@@ -28,11 +28,11 @@
 					<h5 class="d-inline-block fw-bold">৳{{ perHour }}</h5>
 					<small>/Hour</small>
 				</div>
-				<div class>
+				<!-- <div class>
 					<i class="fas fa-star text-primary fs-5 fa-fw"></i>
 					<h5 class="d-inline-block fw-bold">{{ rating }}</h5>
 					<small>({{ reviews }})</small>
-				</div>
+				</div> -->
 				<div class="mt-2">
 					<NuxtLink :to="`/sellers/${id}`" class="btn btn-outline-primary text-decoration-none rounded-pill px-4 mt-2">
 						View

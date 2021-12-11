@@ -102,6 +102,9 @@
 export default {
 	name: "SellerDashboard",
 	middleware: ["auth", "seller", "verified"],
+	async fetch() {
+		await this.$auth.fetchUser();
+	},
 };
 </script>
 

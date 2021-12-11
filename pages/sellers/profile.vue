@@ -483,7 +483,7 @@ export default {
 			await this.getHistory();
 		},
 	},
-	async fetch() {
+	async mounted() {
 		await this.$auth.fetchUser();
 
 		//Get the statistics
