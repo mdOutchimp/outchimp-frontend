@@ -3,17 +3,17 @@ export default {
     head: {
         title: 'Outchimp',
         meta: [{
-                charset: 'utf-8'
-            },
-            {
-                name: 'viewport',
-                content: 'width=device-width, initial-scale=1'
-            },
-            {
-                hid: 'description',
-                name: 'description',
-                content: ''
-            }
+            charset: 'utf-8'
+        },
+        {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1'
+        },
+        {
+            hid: 'description',
+            name: 'description',
+            content: ''
+        }
         ],
         link: [{
             rel: 'icon',
@@ -35,7 +35,8 @@ export default {
         middleware: ["clearValidationErrors"]
     },
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-    plugins: [{
+    plugins: [
+        {
             src: "~/plugins/app.js",
             ssr: true
         },
@@ -53,10 +54,11 @@ export default {
         "~/plugins/mixins/loading.js",
         "~/plugins/vee-validate.js",
         "~/plugins/vue-country-select.js",
+        "~/plugins/vue-sweetalert.js",
         {
             src: '~/plugins/vue-input-tag.js',
             ssr: false
-        }
+        },
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -46,7 +46,7 @@
 					</p>
 				</div>
 
-				<button :disabled="isRequestProcessing" class="btn btn-primary rounded-0 mb-3 w-100 py-2" @click="register()">
+				<button :disabled="isRequestProcessing || !formData.agree" class="btn btn-primary rounded-0 mb-3 w-100 py-2" @click="register()">
 					<p class="d-inline">Sign Up</p>
 				</button>
 

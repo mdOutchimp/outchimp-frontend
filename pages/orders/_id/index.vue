@@ -71,7 +71,7 @@
 									</div>
 
 									<div class="d-flex justify-content-start align-items-center px-4 mb-3">
-										<button class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-5" @click="onSubmitOrder">
+										<button class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-5" :disabled="isRequestProcessing" @click="onSubmitOrder">
 											Submit
 										</button>
 									</div>
@@ -129,12 +129,19 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
 	data() {
 		return {
 			order: null,
 			attachments: null,
 		};
+	},
+	computed: {
+		...mapGetters({
+			validationErrors: "validation/validationErrors",
+			isRequestProcessing: "global/isRequestProcessing",
+		}),
 	},
 	methods: {
 		onFileChanged(e) {

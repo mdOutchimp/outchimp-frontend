@@ -19,6 +19,10 @@
 					<a :href="paymentUrl" v-if="order.status == 'draft'" class="btn btn-primary rounded-pill px-4 text-decoration-none">
 						Confirm Order
 					</a>
+
+					<button @click="changeOrderStatus('completed')" v-if="order.status == 'confirmed'" class="btn btn-primary rounded-pill px-4 text-decoration-none">
+						Complete
+					</button>
 				</div>
 			</page-header>
 
@@ -45,6 +49,20 @@
 										<h5 class="fw-bold">Terms & condition</h5>
 										<p v-if="order.termsAndConditions" v-html="order.termsAndConditions"></p>
 										<p v-else class="text-muted">No Terms & condition Found</p>
+									</div>
+
+									<!-- Attachments -->
+									<div class="mt-3 px-3 pb-3">
+										<h5 class="fw-bold d-flex flex-grow-1">Attachments</h5>
+										<div v-if="order.attachments && order.attachments.length">
+											<a v-for="(attachment, index) in order.attachments" :key="index" :href="attachment.url" target="_blank" class="text-decoration-none text-black d-block">
+												<i class="fas fa-file fa-fw"></i>
+												<span>{{ attachment.name }}</span>
+											</a>
+										</div>
+										<div class="text-grey text-center" v-else>
+											No Attachments Added
+										</div>
 									</div>
 
 									<!-- review -->
@@ -173,15 +191,30 @@ export default {
 		},
 	},
 	methods: {
-		async changeOrderStatus() {
-			const updateOrderResponse = await this.$axios.$put(
-				`/orders/${this.$route.params.id}`,
-				{
-					...this.order,
-					status: "confirmed",
-				}
-			);
-			this.order = updateOrderResponse.data;
+		async changeOrderStatus(status) {
+			this.$swal
+				.fire({
+					title: "Are you sure?",
+					text: "You will not be able to recover this!",
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#1dbf73",
+					confirmButtonText: "Yes, do it!",
+					cancelButtonText: "Cancel",
+				})
+				.then((result) => {
+					if (result.isConfirmed) {
+						this.$axios
+							.$put(`/orders/${this.$route.params.id}`, {
+								...this.order,
+								status,
+							})
+							.then(
+								(updateOrderResponse) =>
+									(this.order = updateOrderResponse.data)
+							);
+					}
+				});
 		},
 
 		getJobType() {
@@ -199,10 +232,6 @@ export default {
 	async fetch() {
 		const res = await this.$axios.$get(`/orders/${this.$route.params.id}`);
 		this.order = res.data;
-
-		// const resReview = await this.$axios.$get(`/reviews?${this.getJobType()}`);
-		// this.review = resReview.data;
-
 		this.stopLoading();
 	},
 };
