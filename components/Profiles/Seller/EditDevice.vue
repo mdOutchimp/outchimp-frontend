@@ -9,6 +9,7 @@
         <div class="modal__body">
           <div class="mb-3">
             <input-tag v-model="tags"></input-tag>
+            <span class="text-muted fs-7">To add device put "," after typing each device name.</span>
             <Error :messages="errMsg"></Error>
           </div>
         </div>
