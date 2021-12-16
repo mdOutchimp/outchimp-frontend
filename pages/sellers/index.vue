@@ -10,11 +10,17 @@
 				</h5>
 			</div>
 			<div class="col-lg-6 text-center text-lg-end">
-				<img src="@/assets/svgs/hiring.svg" alt />
+				<img
+					src="@/assets/svgs/hiring.svg"
+					alt
+				/>
 			</div>
 		</page-header>
 
-		<search-bar v-model="search" @search="getResults" />
+		<search-bar
+			v-model="search"
+			@search="getResults"
+		/>
 		<!-- Freelancer List -->
 		<section class="section-padding">
 			<div class="container">
@@ -33,7 +39,11 @@
 							</select> -->
 						</div>
 						<div class="ms-auto d-block d-lg-none">
-							<a @click.prevent="showFilter = true" type="button" class="text-decoration-none text-black">
+							<a
+								@click.prevent="showFilter = true"
+								type="button"
+								class="text-decoration-none text-black"
+							>
 								<i class="fas fa-filter fa-fw text-primary"></i>
 								<span class="me-2">Filters</span>
 								<i class="fas fa-angle-down"></i>
@@ -41,7 +51,12 @@
 						</div>
 					</div>
 				</div>
-				<seller-filter :filter="filter" :skills="skills" v-if="showFilter" @close="showFilter = false"></seller-filter>
+				<seller-filter
+					:filter="filter"
+					:skills="skills"
+					v-if="showFilter"
+					@close="showFilter = false"
+				></seller-filter>
 
 				<!-- Container -->
 
@@ -49,14 +64,24 @@
 					<!-- Left side -->
 					<div class="col-lg-9">
 						<!-- Single Freelancer -->
-						<seller-card :id="seller.id" :name="seller.name" :img="
-                seller.profilePicture
-                  ? seller.profilePicture
-                  : require('@/assets/images/profile.png')
-              " :jobTitle="seller.jobTitle" location="Kustia, Bangladesh" :skills="seller.skills" :perHour="seller.perHour" :rating="Math.floor(seller.averageRating)" :reviews="seller.totalReview" v-for="seller in laravelData.data" :key="seller.id"></seller-card>
+						<seller-card
+							v-for="seller in laravelData.data"
+							:seller="seller"
+							:key="seller.id"
+						></seller-card>
 
-						<pagination class="mt-5 d-none d-md-flex" :limit="3" :data="laravelData" @pagination-change-page="getResults"></pagination>
-						<pagination class="mt-5 d-flex d-md-none" :limit="-1" :data="laravelData" @pagination-change-page="getResults"></pagination>
+						<pagination
+							class="mt-5 d-none d-md-flex"
+							:limit="3"
+							:data="laravelData"
+							@pagination-change-page="getResults"
+						></pagination>
+						<pagination
+							class="mt-5 d-flex d-md-none"
+							:limit="-1"
+							:data="laravelData"
+							@pagination-change-page="getResults"
+						></pagination>
 					</div>
 					<!-- Freelance Section End -->
 
@@ -69,21 +94,43 @@
 							<div class="mt-3">
 								<h6 class="fw-bold">Rate</h6>
 								<div class="d-flex mt-3 justify-content-between align-items-center">
-									<input type="text" placeholder="min" v-model="filter.rateMin" class="form-control" />
+									<input
+										type="text"
+										placeholder="min"
+										v-model="filter.rateMin"
+										class="form-control"
+									/>
 									<span class="px-2">to</span>
-									<input type="text" placeholder="max" v-model="filter.rateMax" class="form-control" />
+									<input
+										type="text"
+										placeholder="max"
+										v-model="filter.rateMax"
+										class="form-control"
+									/>
 								</div>
 							</div>
 
 							<!-- Skills -->
 							<div class="mt-3">
 								<h6 class="fw-bold">Skills</h6>
-								<div class="mb-3" v-if="filter.skills.length">
-									<span class="badge border border-primary text-primary rounded-pill me-1 mt-1" v-for="(skill, index) in filter.skills" :key="index" role="button" @click="removeSkill(index)">{{ skill }}
+								<div
+									class="mb-3"
+									v-if="filter.skills.length"
+								>
+									<span
+										class="badge border border-primary text-primary rounded-pill me-1 mt-1"
+										v-for="(skill, index) in filter.skills"
+										:key="index"
+										role="button"
+										@click="removeSkill(index)"
+									>{{ skill }}
 										<span class="ms-2">&#10006;</span>
 									</span>
 								</div>
-								<multiselect-filter :options="skills" @input="filterSkill"></multiselect-filter>
+								<multiselect-filter
+									:options="skills"
+									@input="filterSkill"
+								></multiselect-filter>
 							</div>
 						</div>
 					</div>
@@ -97,6 +144,7 @@
 import { mapGetters } from "vuex";
 import SellerFilter from "@/components/Filters/SellerFilter.vue";
 export default {
+  name: 'sellers',
 	components: { SellerFilter },
 	data() {
 		return {
