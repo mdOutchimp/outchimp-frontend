@@ -56,14 +56,25 @@
 									<h5 class="fw-bold mb-3 text-center">About The Seller</h5>
 									<div class="d-flex flex-column align-items-center">
 										<div>
-											<img :src="
+											<img
+												:src="
                           bid.seller.profilePicture.length
                             ? bid.seller.profilePicture
                             : require('@/assets/images/profile.png')
-                        " class="rounded-circle" style="height: 120px; border-radius: 50%" alt />
+                        "
+												class="rounded-circle"
+												style="height: 120px; border-radius: 50%"
+												alt
+											/>
 										</div>
-										<div class="mt-3 text-center" v-if="bid">
-											<NuxtLink :to="`/sellers/${bid.sellerId}`" class="text-black text-decoration-none">
+										<div
+											class="mt-3 text-center"
+											v-if="bid"
+										>
+											<NuxtLink
+												:to="`/sellers/${bid.sellerId}`"
+												class="text-black text-decoration-none"
+											>
 												<h5 class="fw-bold">{{ bid.seller.name }}</h5>
 											</NuxtLink>
 											<p class="fw-semibold">
@@ -83,7 +94,10 @@
 												{{ bid.seller.address.city }},
 												{{ bid.seller.address.country }}
 											</p>
-											<p v-else class="text-grey">No Data Found</p>
+											<p
+												v-else
+												class="text-grey"
+											>No Data Found</p>
 										</div>
 										<div class="ms-auto">
 											<h6 class="fw-bold">Member Since</h6>
@@ -91,7 +105,11 @@
 										</div>
 									</div>
 
-									<NuxtLink :to="`/orders/create?type=job&id=${bid.jobId}`" v-if="$auth.loggedIn & ($auth.user.type == 'buyer')" class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-4 w-100">Accept</NuxtLink>
+									<NuxtLink
+										:to="`/orders/create?type=job&id=${bid.id}`"
+										v-if="$auth.loggedIn & ($auth.user.type == 'buyer')"
+										class="btn btn-outline-primary text-decoration-none rounded-pill mt-3 px-4 w-100"
+									>Accept</NuxtLink>
 								</div>
 							</div>
 						</div>

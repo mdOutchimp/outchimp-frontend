@@ -61,9 +61,9 @@
           <div class="card border-0 rounded-0 shadow-sm mt-3">
             <div class="card-body">
               <div class="d-flex align-items-center justify-content-between">
-                <h5 class="mb-0 fw-bold">Orders</h5>
+                <h5 class="mb-0 fw-bold">Recent Orders</h5>
 
-                <div>
+                <!-- <div>
                   <select
                     class="form-select form-select-sm"
                     aria-label=".form-select-sm example"
@@ -72,7 +72,7 @@
                     <option value="2">Pending orders</option>
                     <option value="3">Waiting</option>
                   </select>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -92,8 +92,7 @@
                 >
                   <div class="me-3">
                     <img
-                      data-v-be386ea0=""
-                      src="/_nuxt/assets/images/profile.png"
+                      :src="order.buyer.profilePicture || require('~/assets/images/profile.png')"
                       class="rounded-circle d-block"
                       style="max-width: 100px"
                     />
@@ -157,7 +156,7 @@ export default {
     };
   },
   fetch() {
-    this.$axios.get("/orders?notStatus=draft&limit=5").then((res) => {
+    this.$axios.get(`/orders?seller_id=${this.$auth.user.id}&limit=5`).then((res) => {
       this.orders = res.data;
       this.stopLoading();
     });

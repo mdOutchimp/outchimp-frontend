@@ -159,7 +159,8 @@ export default {
 						"&categories=" +
 						this.filter.categories +
 						"&skills=" +
-						this.filter.skills
+						this.filter.skills +
+            "&notStatus=draft"
 				)
 				.then((response) => {
 					this.laravelData = response;

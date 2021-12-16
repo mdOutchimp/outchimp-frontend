@@ -2,14 +2,25 @@
 	<div>
 		<!-- Hero section -->
 		<section class="hero">
-			<div class="hero__text text-center container" style="max-width: 850px">
+			<div
+				class="hero__text text-center container"
+				style="max-width: 850px"
+			>
 				<h1 class="display-4">
 					{{ appSettings.websiteSettings.settings.hero_title }}
 				</h1>
-				<p class="text-white d-none d-md-block mb-3">
+				<p class="text-white mb-3">
 					{{ appSettings.websiteSettings.settings.hero_subtitle }}
 				</p>
-				<autocomplete :taggable="false" :multiple="false" :options="tags" label="name" placeholder="Search here..." @search="handleSearch" @onChange="onSearch"></autocomplete>
+				<autocomplete
+					:taggable="false"
+					:multiple="false"
+					:options="tags"
+					label="name"
+					placeholder="Search here..."
+					@search="handleSearch"
+					@onChange="onSearch"
+				></autocomplete>
 			</div>
 		</section>
 		<!-- Hero section end -->
@@ -24,14 +35,25 @@
 					</div>
 				</div>
 				<div class="category">
-					<div class="category-card p-4" v-for="category in categories" :key="category.id">
-						<NuxtLink :to="`categories/${category.id}`" class="text-decoration-none">
+					<div
+						class="category-card p-4"
+						v-for="category in categories"
+						:key="category.id"
+					>
+						<NuxtLink
+							:to="`categories/${category.id}`"
+							class="text-decoration-none"
+						>
 							<div class="category-card__header text-center">
-								<img :src="
+								<img
+									:src="
                       category.mediaUrl.trim()
                         ? category.mediaUrl
                         : require('@/assets/images/placeholder.jpg')
-                    " style="height: 50px" alt="" />
+                    "
+									style="height: 50px"
+									alt=""
+								/>
 							</div>
 							<div class="h5 fw-bold mt-3 text-center text-black">
 								{{ category.name }}
@@ -59,8 +81,12 @@
 				</div>
 
 				<div class="feature">
-					<div class="feature-card" v-for="wcu_highlight in appSettings.websiteSettings.settings
-                .wcu_highlights" :key="wcu_highlight.index">
+					<div
+						class="feature-card"
+						v-for="wcu_highlight in appSettings.websiteSettings.settings
+                .wcu_highlights"
+						:key="wcu_highlight.index"
+					>
 						<div class="feature-card__header">
 							<i class="fas fa-tasks fs-4 text-primary fa-fw"></i>
 							<p class="ms-1">
@@ -92,11 +118,20 @@
 						<splide-slide>
 							<div class="card border-0">
 								<div class="card-header p-0">
-									<img src="@/assets/images/latest-1.png" alt class="w-100" />
+									<img
+										src="@/assets/images/latest-1.png"
+										alt
+										class="w-100"
+									/>
 								</div>
 								<div class="card-body">
 									<div class="d-flex align-items-center">
-										<img src="@/assets/images/user-1.jpg" alt class="rounded-circle" style="height: 50px" />
+										<img
+											src="@/assets/images/user-1.jpg"
+											alt
+											class="rounded-circle"
+											style="height: 50px"
+										/>
 										<div class="ms-2">
 											<p class="mb-0 fw-bold">Photography</p>
 											<span class="text-muted">by John Doe</span>
@@ -108,45 +143,20 @@
 						<splide-slide>
 							<div class="card border-0">
 								<div class="card-header p-0">
-									<img src="@/assets/images/latest-2.png" alt class="w-100" />
+									<img
+										src="@/assets/images/latest-2.png"
+										alt
+										class="w-100"
+									/>
 								</div>
 								<div class="card-body">
 									<div class="d-flex align-items-center">
-										<img src="@/assets/images/user-1.jpg" alt class="rounded-circle" style="height: 50px" />
-										<div class="ms-2">
-											<p class="mb-0 fw-bold">Photography</p>
-											<span class="text-muted">by John Doe</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</splide-slide>
-
-						<splide-slide>
-							<div class="card border-0">
-								<div class="card-header p-0">
-									<img src="@/assets/images/latest-4.png" alt class="w-100" />
-								</div>
-								<div class="card-body">
-									<div class="d-flex align-items-center">
-										<img src="@/assets/images/user-1.jpg" alt class="rounded-circle" style="height: 50px" />
-										<div class="ms-2">
-											<p class="mb-0 fw-bold">Photography</p>
-											<span class="text-muted">by John Doe</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</splide-slide>
-
-						<splide-slide>
-							<div class="card border-0">
-								<div class="card-header p-0">
-									<img src="@/assets/images/latest-3.png" alt class="w-100" />
-								</div>
-								<div class="card-body">
-									<div class="d-flex align-items-center">
-										<img src="@/assets/images/user-1.jpg" alt class="rounded-circle" style="height: 50px" />
+										<img
+											src="@/assets/images/user-1.jpg"
+											alt
+											class="rounded-circle"
+											style="height: 50px"
+										/>
 										<div class="ms-2">
 											<p class="mb-0 fw-bold">Photography</p>
 											<span class="text-muted">by John Doe</span>
@@ -159,11 +169,20 @@
 						<splide-slide>
 							<div class="card border-0">
 								<div class="card-header p-0">
-									<img src="@/assets/images/latest-4.png" alt class="w-100" />
+									<img
+										src="@/assets/images/latest-4.png"
+										alt
+										class="w-100"
+									/>
 								</div>
 								<div class="card-body">
 									<div class="d-flex align-items-center">
-										<img src="@/assets/images/user-1.jpg" alt class="rounded-circle" style="height: 50px" />
+										<img
+											src="@/assets/images/user-1.jpg"
+											alt
+											class="rounded-circle"
+											style="height: 50px"
+										/>
 										<div class="ms-2">
 											<p class="mb-0 fw-bold">Photography</p>
 											<span class="text-muted">by John Doe</span>
@@ -176,11 +195,72 @@
 						<splide-slide>
 							<div class="card border-0">
 								<div class="card-header p-0">
-									<img src="@/assets/images/latest-1.png" alt class="w-100" />
+									<img
+										src="@/assets/images/latest-3.png"
+										alt
+										class="w-100"
+									/>
 								</div>
 								<div class="card-body">
 									<div class="d-flex align-items-center">
-										<img src="@/assets/images/user-1.jpg" alt class="rounded-circle" style="height: 50px" />
+										<img
+											src="@/assets/images/user-1.jpg"
+											alt
+											class="rounded-circle"
+											style="height: 50px"
+										/>
+										<div class="ms-2">
+											<p class="mb-0 fw-bold">Photography</p>
+											<span class="text-muted">by John Doe</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</splide-slide>
+
+						<splide-slide>
+							<div class="card border-0">
+								<div class="card-header p-0">
+									<img
+										src="@/assets/images/latest-4.png"
+										alt
+										class="w-100"
+									/>
+								</div>
+								<div class="card-body">
+									<div class="d-flex align-items-center">
+										<img
+											src="@/assets/images/user-1.jpg"
+											alt
+											class="rounded-circle"
+											style="height: 50px"
+										/>
+										<div class="ms-2">
+											<p class="mb-0 fw-bold">Photography</p>
+											<span class="text-muted">by John Doe</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</splide-slide>
+
+						<splide-slide>
+							<div class="card border-0">
+								<div class="card-header p-0">
+									<img
+										src="@/assets/images/latest-1.png"
+										alt
+										class="w-100"
+									/>
+								</div>
+								<div class="card-body">
+									<div class="d-flex align-items-center">
+										<img
+											src="@/assets/images/user-1.jpg"
+											alt
+											class="rounded-circle"
+											style="height: 50px"
+										/>
 										<div class="ms-2">
 											<p class="mb-0 fw-bold">Photography</p>
 											<span class="text-muted">by John Doe</span>
@@ -209,8 +289,12 @@
 						<h2 class="fw-bold mb-5">
 							{{ appSettings.websiteSettings.settings.about_section_title }}
 						</h2>
-						<div class="row mt-3" v-for="about_section_highlight in appSettings.websiteSettings
-                  .settings.about_section_highlights" :key="about_section_highlight.index">
+						<div
+							class="row mt-3"
+							v-for="about_section_highlight in appSettings.websiteSettings
+                  .settings.about_section_highlights"
+							:key="about_section_highlight.index"
+						>
 							<div class="mb-2">
 								<i class="fas fa-check-circle fs-3 text-primary fa-fw"></i>
 								<span class="h4">{{ about_section_highlight.title }}</span>
@@ -221,7 +305,11 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<img src="@/assets/svgs/setting-on-table.svg" alt class="w-100" />
+						<img
+							src="@/assets/svgs/setting-on-table.svg"
+							alt
+							class="w-100"
+						/>
 					</div>
 				</div>
 			</div>
@@ -229,11 +317,18 @@
 		<!-- End great about us -->
 
 		<!-- Statistics -->
-		<section class="statistics section-padding" style="background-image: linear-gradient(rgba('#1D4354', 0.9),rgba('#1D4354', 0.9)),url('@/assets/images/bg-statistics.jpg');">
+		<section
+			class="statistics section-padding"
+			style="background-image: linear-gradient(rgba('#1D4354', 0.9),rgba('#1D4354', 0.9)),url('@/assets/images/bg-statistics.jpg');"
+		>
 			<div class="container">
 				<div class="row g-5">
 					<div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-start align-items-center">
-						<img src="@/assets/svgs/statistics-employers.svg" alt class="me-3" />
+						<img
+							src="@/assets/svgs/statistics-employers.svg"
+							alt
+							class="me-3"
+						/>
 						<div class="text-white">
 							<h2 class="fw-bold mb-0">{{totalBuyers}}</h2>
 							<span class="fs-4">Employers</span>
@@ -241,7 +336,11 @@
 					</div>
 
 					<div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-start align-items-center">
-						<img src="@/assets/svgs/statistics-freelancers.svg" alt class="me-3" />
+						<img
+							src="@/assets/svgs/statistics-freelancers.svg"
+							alt
+							class="me-3"
+						/>
 						<div class="text-white">
 							<h2 class="fw-bold mb-0">{{totalSellers}}</h2>
 							<span class="fs-4">Freelancers</span>
@@ -249,7 +348,11 @@
 					</div>
 
 					<div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-start align-items-center">
-						<img src="@/assets/svgs/statistics-transactions.svg" alt class="me-3" />
+						<img
+							src="@/assets/svgs/statistics-transactions.svg"
+							alt
+							class="me-3"
+						/>
 						<div class="text-white">
 							<h2 class="fw-bold mb-0">{{totalTransaction}}</h2>
 							<span class="fs-4">Transactions</span>
@@ -257,7 +360,11 @@
 					</div>
 
 					<div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-start align-items-center">
-						<img src="@/assets/svgs/statistics-satisfaction.svg" alt class="me-3" />
+						<img
+							src="@/assets/svgs/statistics-satisfaction.svg"
+							alt
+							class="me-3"
+						/>
 						<div class="text-white">
 							<h2 class="fw-bold mb-0">99%</h2>
 							<span class="fs-4">Satisfaction</span>
@@ -280,11 +387,17 @@
 					</div>
 					<splide :options="testimonial">
 						<!-- Slide  -->
-						<splide-slide v-for="(review, index) in reviews" :key="index">
+						<splide-slide
+							v-for="(review, index) in reviews"
+							:key="index"
+						>
 							<div class="card testimonial-card">
 								<div class="card-body d-flex align-items-center">
 									<div class="testimonial-card__image">
-										<img :src="review.author.profilePicture" alt="user-8" />
+										<img
+											:src="review.author.profilePicture"
+											alt="user-8"
+										/>
 									</div>
 									<div class="testimonial-card__content">
 										<p class="fst-italic text-justify">
