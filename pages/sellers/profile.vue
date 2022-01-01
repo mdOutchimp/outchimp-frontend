@@ -5,16 +5,26 @@
 				<div class="col-md-8">
 					<div class="d-flex flex-column flex-sm-row align-items-center">
 						<div class="me-2 profile-photo">
-							<img :src="
+							<img
+								:src="
                   $auth.user.profilePicture.length
                     ? $auth.user.profilePicture
                     : require('@/assets/images/profile.png')
-                " alt />
-							<div class="profile-photo__overlay" v-if="$auth.loggedIn" @click="editProfilePicture = true">
+                "
+								alt
+							/>
+							<div
+								class="profile-photo__overlay"
+								v-if="$auth.loggedIn"
+								@click="editProfilePicture = true"
+							>
 								<i class="fas fa-camera fs-2"></i>
 							</div>
 						</div>
-						<edit-seller-profile-picture v-if="editProfilePicture" @close="editProfilePicture = false"></edit-seller-profile-picture>
+						<edit-seller-profile-picture
+							v-if="editProfilePicture"
+							@close="editProfilePicture = false"
+						></edit-seller-profile-picture>
 						<div class="ms-sm-2 mt-3 mt-sm-0 d-flex flex-column align-items-center align-items-sm-start">
 							<div class="d-flex">
 								<h3 class="text-white fw-bold me-1">{{ $auth.user.name }}</h3>
@@ -27,10 +37,16 @@
                   $auth.user.jobTitle
                 }}</span>
 								<span v-else>Add your job title</span>
-								<span role="button" @click="editTitle = true">
+								<span
+									role="button"
+									@click="editTitle = true"
+								>
 									<i class="fas fa-edit text-primary"></i>
 								</span>
-								<edit-seller-title v-if="editTitle" @close="editTitle = false"></edit-seller-title>
+								<edit-seller-title
+									v-if="editTitle"
+									@close="editTitle = false"
+								></edit-seller-title>
 								<!-- <span>|</span>
                             <span>100% Sucess Rate</span>-->
 							</h5>
@@ -38,7 +54,10 @@
 					</div>
 				</div>
 				<div class="col-md-4 text-md-end">
-					<button class="btn btn-outline-primary px-4 rounded-pill mt-2 mt-md-0" v-if="$auth.user.type == 'buyer'">
+					<button
+						class="btn btn-outline-primary px-4 rounded-pill mt-2 mt-md-0"
+						v-if="$auth.user.type == 'buyer'"
+					>
 						<span>Contact Me</span>
 					</button>
 				</div>
@@ -57,14 +76,29 @@
 											<i class="fas h5 fa-user-circle text-primary me-2"></i>
 											<h5 class="fw-bold d-flex flex-grow-1">
 												About Me
-												<i class="fas fa-edit text-primary ms-auto" role="button" v-if="$auth.user.type == 'seller'" @click="editAbout = true"></i>
+												<i
+													class="fas fa-edit text-primary ms-auto"
+													role="button"
+													v-if="$auth.user.type == 'seller'"
+													@click="editAbout = true"
+												></i>
 											</h5>
 										</div>
 										<div class>
-											<p class="text-justify" v-html="$auth.user.about" v-if="$auth.user.about"></p>
-											<p class="text-grey text-center" v-else>No Data Found</p>
+											<p
+												class="text-justify"
+												v-html="$auth.user.about"
+												v-if="$auth.user.about"
+											></p>
+											<p
+												class="text-grey text-center"
+												v-else
+											>No Data Found</p>
 										</div>
-										<edit-seller-about v-if="editAbout" @close="editAbout = false"></edit-seller-about>
+										<edit-seller-about
+											v-if="editAbout"
+											@close="editAbout = false"
+										></edit-seller-about>
 									</div>
 
 									<!-- Experience -->
@@ -72,11 +106,21 @@
 										<h5 class="d-flex">
 											<i class="fas h5 fa-briefcase text-primary me-2"></i>
 											<span class="fw-bold">Experience</span>
-											<i class="fas fa-edit text-primary ms-auto" role="button" @click="addExperience = true"></i>
+											<i
+												class="fas fa-edit text-primary ms-auto"
+												role="button"
+												@click="addExperience = true"
+											></i>
 										</h5>
-										<add-seller-experience v-if="addExperience" @close="addExperience = false"></add-seller-experience>
+										<add-seller-experience
+											v-if="addExperience"
+											@close="addExperience = false"
+										></add-seller-experience>
 										<div v-if="$auth.user.experiences.length">
-											<div v-for="experience in $auth.user.experiences" :key="experience.id">
+											<div
+												v-for="experience in $auth.user.experiences"
+												:key="experience.id"
+											>
 												<small>
 													{{ experience.joinedAt }} -
 													{{ experience.resignedAt }}
@@ -90,7 +134,10 @@
 												</p>
 											</div>
 										</div>
-										<div class="text-grey text-center" v-else>
+										<div
+											class="text-grey text-center"
+											v-else
+										>
 											Nothing to show
 										</div>
 									</div>
@@ -100,13 +147,24 @@
 										<h5 class="d-flex">
 											<i class="fas h5 fa-user-graduate text-primary me-2"></i>
 											<span class="fw-bold">Education</span>
-											<span class="ms-auto text-primary" @click="addEducation = true" role="button" v-if="$auth.user.type == 'seller'">
+											<span
+												class="ms-auto text-primary"
+												@click="addEducation = true"
+												role="button"
+												v-if="$auth.user.type == 'seller'"
+											>
 												<i class="fas fa-edit"></i>
 											</span>
 										</h5>
-										<add-seller-education v-if="addEducation" @close="addEducation = false"></add-seller-education>
+										<add-seller-education
+											v-if="addEducation"
+											@close="addEducation = false"
+										></add-seller-education>
 										<div v-if="$auth.user.educations.length">
-											<div v-for="education in $auth.user.educations" :key="education.id">
+											<div
+												v-for="education in $auth.user.educations"
+												:key="education.id"
+											>
 												<p class="fs-7">
 													{{ education.startedAt }} - {{ education.passedAt }}
 												</p>
@@ -117,7 +175,10 @@
 												</p>
 											</div>
 										</div>
-										<div class="text-grey text-center" v-else>
+										<div
+											class="text-grey text-center"
+											v-else
+										>
 											Nothing to show
 										</div>
 									</div>
@@ -127,36 +188,74 @@
 										<h5 class="d-flex">
 											<i class="fas h5 fa-globe-asia text-primary me-2"></i>
 											<span class="fw-bold">Devices</span>
-											<span class="ms-auto text-primary" role="button" v-if="$auth.user.type == 'seller'" @click="editDevice = true">
+											<span
+												class="ms-auto text-primary"
+												role="button"
+												v-if="$auth.user.type == 'seller'"
+												@click="editDevice = true"
+											>
 												<i class="fas fa-edit"></i>
 											</span>
 										</h5>
-										<div class="mt-2" v-if="$auth.loggedIn && $auth.user.devices.length">
-											<span href="javascript:void(0)" class="badge border border-primary text-primary rounded-pill py-2 me-2 px-3" v-for="(device, index) in $auth.user.devices" :key="index">{{ device }}</span>
+										<div
+											class="mt-2"
+											v-if="$auth.loggedIn && $auth.user.devices.length"
+										>
+											<span
+												href="javascript:void(0)"
+												class="badge border border-primary text-primary rounded-pill py-2 me-2 px-3"
+												v-for="(device, index) in $auth.user.devices"
+												:key="index"
+											>{{ device }}</span>
 										</div>
-										<div class="text-grey text-center" v-else>
+										<div
+											class="text-grey text-center"
+											v-else
+										>
 											Nothing to show
 										</div>
 									</div>
-									<edit-device v-if="editDevice" @close="editDevice = false"></edit-device>
+									<edit-device
+										v-if="editDevice"
+										@close="editDevice = false"
+									></edit-device>
 
 									<!-- Skills -->
 									<div class="mb-4">
 										<h5 class="d-flex">
 											<i class="fas h5 fa-globe-asia text-primary me-2"></i>
 											<span class="fw-bold">Skills</span>
-											<span class="ms-auto text-primary" role="button" v-if="$auth.user.type == 'seller'" @click="editSkill = true">
+											<span
+												class="ms-auto text-primary"
+												role="button"
+												v-if="$auth.user.type == 'seller'"
+												@click="editSkill = true"
+											>
 												<i class="fas fa-edit"></i>
 											</span>
 										</h5>
-										<div class="mt-2" v-if="$auth.loggedIn && $auth.user.skills.length">
-											<span href="javascript:void(0)" class="badge border border-primary text-primary rounded-pill py-2 me-2 px-3" v-for="skill in $auth.user.skills" :key="skill.id">{{ skill.name }}</span>
+										<div
+											class="mt-2"
+											v-if="$auth.loggedIn && $auth.user.skills.length"
+										>
+											<span
+												href="javascript:void(0)"
+												class="badge border border-primary text-primary rounded-pill py-2 me-2 px-3"
+												v-for="skill in $auth.user.skills"
+												:key="skill.id"
+											>{{ skill.name }}</span>
 										</div>
-										<div class="text-grey text-center" v-else>
+										<div
+											class="text-grey text-center"
+											v-else
+										>
 											Nothing to show
 										</div>
 									</div>
-									<edit-skill v-if="editSkill" @close="editSkill = false"></edit-skill>
+									<edit-skill
+										v-if="editSkill"
+										@close="editSkill = false"
+									></edit-skill>
 
 									<!-- Work history -->
 									<div class="mb-4">
@@ -167,15 +266,23 @@
 										<!-- v-if="histories.length" -->
 										<div v-if="histories.length">
 											<!-- Single history -->
-											<div class="mt-3" v-for="order in histories" :key="order.id">
+											<div
+												class="mt-3"
+												v-for="order in histories"
+												:key="order.id"
+											>
 												<h6 class="fw-bold">
 													{{ order.orderable.title }}
 												</h6>
 												<div class="d-sm-flex align-items-center">
 													<div class="rating me-2">
-														<i class="fas fa-star" v-for="star in Math.floor(
+														<i
+															class="fas fa-star"
+															v-for="star in Math.floor(
                                 order.orderable.averageRating
-                              )" :key="star"></i>
+                              )"
+															:key="star"
+														></i>
 													</div>
 													<span class="fw-bold">
 														{{ order.orderable.averageRating }}
@@ -196,10 +303,17 @@
 													</div>
 												</div>
 											</div>
-											<a class="text-primary text-decoration-none d-block mt-3 fw-bold" href="javascript:void(0)" @click.prevent="moreHistory">See more +</a>
+											<a
+												class="text-primary text-decoration-none d-block mt-3 fw-bold"
+												href="javascript:void(0)"
+												@click.prevent="moreHistory"
+											>See more +</a>
 										</div>
 										<!-- v-else -->
-										<div v-else class="text-grey text-center">
+										<div
+											v-else
+											class="text-grey text-center"
+										>
 											Nothing to show
 										</div>
 									</div>
@@ -217,11 +331,20 @@
 												<i class="fas fa-chart-bar text-primary h5 me-2"></i>
 												<h5 class="fw-bold">Overview</h5>
 											</div>
-											<span class="ms-auto" role="button">
-												<i class="fas fa-edit text-primary h5" @click="editOverview = true"></i>
+											<span
+												class="ms-auto"
+												role="button"
+											>
+												<i
+													class="fas fa-edit text-primary h5"
+													@click="editOverview = true"
+												></i>
 											</span>
 										</div>
-										<edit-overview v-if="editOverview" @close="editOverview = false"></edit-overview>
+										<edit-overview
+											v-if="editOverview"
+											@close="editOverview = false"
+										></edit-overview>
 
 										<div class="d-flex">
 											<div>Per Hour</div>
@@ -232,11 +355,17 @@
 
 										<div class="d-flex">
 											<div>From</div>
-											<div class="fw-semibold ms-auto" v-if="$auth.user.address">
+											<div
+												class="fw-semibold ms-auto"
+												v-if="$auth.user.address"
+											>
 												{{ $auth.user.address.city }},
 												{{ $auth.user.address.country }}
 											</div>
-											<div v-else>No data</div>
+											<div
+												v-else
+												class="ms-auto"
+											>N/A</div>
 										</div>
 
 										<div class="d-flex">
@@ -255,7 +384,10 @@
 									</div>
 
 									<!-- Review Stats -->
-									<div class="mt-4" v-if="reviewStatistics">
+									<div
+										class="mt-4"
+										v-if="reviewStatistics"
+									>
 										<div class="d-flex align-items-center">
 											<i class="fas fa-star text-primary h5 me-2"></i>
 											<h5 class="fw-bold">Ratings</h5>
@@ -263,10 +395,20 @@
 										<div class="d-flex mt-2 align-items-center">
 											<div>5 Stars</div>
 											<div class="flex-grow-1 px-3">
-												<div class="progress" style="height: 10px">
-													<div class="progress-bar" role="progressbar" :style="{
+												<div
+													class="progress"
+													style="height: 10px"
+												>
+													<div
+														class="progress-bar"
+														role="progressbar"
+														:style="{
                               width: `${reviewStatistics['5Star'].percent}%`,
-                            }" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            }"
+														aria-valuenow="50"
+														aria-valuemin="0"
+														aria-valuemax="100"
+													></div>
 												</div>
 											</div>
 											<div>({{ reviewStatistics["5Star"].value }})</div>
@@ -275,10 +417,20 @@
 										<div class="d-flex mt-2 align-items-center">
 											<div>4 Stars</div>
 											<div class="flex-grow-1 px-3">
-												<div class="progress" style="height: 10px">
-													<div class="progress-bar" role="progressbar" :style="{
+												<div
+													class="progress"
+													style="height: 10px"
+												>
+													<div
+														class="progress-bar"
+														role="progressbar"
+														:style="{
                               width: `${reviewStatistics['4Star'].percent}%`,
-                            }" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            }"
+														aria-valuenow="50"
+														aria-valuemin="0"
+														aria-valuemax="100"
+													></div>
 												</div>
 											</div>
 											<div>({{ reviewStatistics["4Star"].value }})</div>
@@ -287,10 +439,20 @@
 										<div class="d-flex mt-2 align-items-center">
 											<div>3 Stars</div>
 											<div class="flex-grow-1 px-3">
-												<div class="progress" style="height: 10px">
-													<div class="progress-bar" role="progressbar" :style="{
+												<div
+													class="progress"
+													style="height: 10px"
+												>
+													<div
+														class="progress-bar"
+														role="progressbar"
+														:style="{
                               width: `${reviewStatistics['3Star'].percent}%`,
-                            }" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            }"
+														aria-valuenow="50"
+														aria-valuemin="0"
+														aria-valuemax="100"
+													></div>
 												</div>
 											</div>
 											<div>({{ reviewStatistics["3Star"].value }})</div>
@@ -299,10 +461,20 @@
 										<div class="d-flex mt-2 align-items-center">
 											<div>2 Stars</div>
 											<div class="flex-grow-1 px-3">
-												<div class="progress" style="height: 10px">
-													<div class="progress-bar" role="progressbar" :style="{
+												<div
+													class="progress"
+													style="height: 10px"
+												>
+													<div
+														class="progress-bar"
+														role="progressbar"
+														:style="{
                               width: `${reviewStatistics['2Star'].percent}%`,
-                            }" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            }"
+														aria-valuenow="50"
+														aria-valuemin="0"
+														aria-valuemax="100"
+													></div>
 												</div>
 											</div>
 											<div>({{ reviewStatistics["2Star"].value }})</div>
@@ -311,10 +483,20 @@
 										<div class="d-flex mt-2 align-items-center">
 											<div>1 Stars</div>
 											<div class="flex-grow-1 px-3">
-												<div class="progress" style="height: 10px">
-													<div class="progress-bar" role="progressbar" :style="{
+												<div
+													class="progress"
+													style="height: 10px"
+												>
+													<div
+														class="progress-bar"
+														role="progressbar"
+														:style="{
                               width: `${reviewStatistics['1Star'].percent}%`,
-                            }" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            }"
+														aria-valuenow="50"
+														aria-valuemin="0"
+														aria-valuemax="100"
+													></div>
 												</div>
 											</div>
 											<div>({{ reviewStatistics["1Star"].value }})</div>
@@ -334,24 +516,47 @@
 					<div class="section-header mb-5">
 						<div class="section-header__title text-center">
 							<p class="h2 fw-bold">Packages</p>
-							<span class="section-header__line" style="width: 120px"></span>
+							<span
+								class="section-header__line"
+								style="width: 120px"
+							></span>
 						</div>
 					</div>
 
-					<div class="package-section" v-if="packages.length">
+					<div
+						class="package-section"
+						v-if="packages.length"
+					>
 						<div class="row">
-							<div class="col-lg-3 col-md-4 col-sm-6" v-for="pkg in packages" :key="pkg.id">
-								<package-card :id="pkg.id" :src="
+							<div
+								class="col-lg-3 col-md-4 col-sm-6"
+								v-for="pkg in packages"
+								:key="pkg.id"
+							>
+								<package-card
+									:id="pkg.id"
+									:src="
                     pkg.mediaUrl.length
                       ? pkg.mediaUrl
                       : require('@/assets/images/placeholder.jpg')
-                  " :title="pkg.name" :author="pkg.sellerName" :price="pkg.price" class="shadow-sm"></package-card>
+                  "
+									:title="pkg.name"
+									:author="pkg.sellerName"
+									:price="pkg.price"
+									class="shadow-sm"
+								></package-card>
 							</div>
 						</div>
 					</div>
 
-					<div v-else class="text-center">
-						<NuxtLink to="/packages/create" class="btn btn-outline-primary text-decoration-none">Add A Package</NuxtLink>
+					<div
+						v-else
+						class="text-center"
+					>
+						<NuxtLink
+							to="/packages/create"
+							class="btn btn-outline-primary text-decoration-none"
+						>Add A Package</NuxtLink>
 					</div>
 				</div>
 			</section>
@@ -364,28 +569,44 @@
 						<div class="section-header mb-5">
 							<div class="section-header__title text-center">
 								<p class="h2 fw-bold">Reviews</p>
-								<span class="section-header__line" style="width: 100px"></span>
+								<span
+									class="section-header__line"
+									style="width: 100px"
+								></span>
 							</div>
 						</div>
 
 						<div class="package-section">
 							<div class="row">
 								<!-- Loop over all Review -->
-								<div v-for="review in reviews" :key="review.id" class="col-lg-3 col-md-3 col-sm-6">
+								<div
+									v-for="review in reviews"
+									:key="review.id"
+									class="col-lg-3 col-md-3 col-sm-6"
+								>
 									<div class="card rounded-0 border-0 mb-4">
 										<div class="card-body bg-light">
 											<div class="rating mb-1">
-												<i v-for="r in review.rating" :key="r" class="fas fa-star"></i>
+												<i
+													v-for="r in review.rating"
+													:key="r"
+													class="fas fa-star"
+												></i>
 											</div>
 											<p class="fs-8 fst-italic">
 												{{ review.review }}
 											</p>
 											<div class="d-flex mt-3">
 												<div class="me-2">
-													<img class="rounded-circle" :src="
+													<img
+														class="rounded-circle"
+														:src="
                               review.profilePicture ||
                               require('@/assets/images/profile.png')
-                            " style="width: 35px" alt="buyer-1" />
+                            "
+														style="width: 35px"
+														alt="buyer-1"
+													/>
 												</div>
 												<div class="pb-0">
 													<p class="mb-0 fw-bold fs-7">
@@ -400,7 +621,11 @@
 							</div>
 
 							<div class="text-center mt-1">
-								<a class="text-primary fs-6 fw-bold" href="javascript:void(0)" @click.prevent="seeMore">
+								<a
+									class="text-primary fs-6 fw-bold"
+									href="javascript:void(0)"
+									@click.prevent="seeMore"
+								>
 									See More
 									<i class="fas fa-angle-down ms-1"></i>
 								</a>

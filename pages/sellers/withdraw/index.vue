@@ -28,42 +28,73 @@
 										</p>
 									</div>
 									<div v-if="$auth.user.balance > 0">
-										<button @click="withdrawModal = true" class="btn btn-primary border-0 outline-none">
+										<button
+											@click="withdrawModal = true"
+											class="btn btn-primary border-0 outline-none"
+										>
 											Withdraw
 										</button>
 									</div>
 								</div>
-								<withdraw-balance v-if="withdrawModal" @close="withdrawModal = false">
+								<withdraw-balance
+									v-if="withdrawModal"
+									@close="withdrawModal = false"
+								>
 								</withdraw-balance>
 							</div>
 						</div>
 
 						<!-- table -->
-						<div class="mt-3" v-if="laravelData">
+						<div
+							class="mt-3"
+							v-if="laravelData"
+						>
 							<table class="table table-hover table-responsive m-0">
 								<thead>
 									<tr>
-										<th class="px-4 table-dark" colspan="4">Withdraw History</th>
+										<th
+											class="px-4 table-dark"
+											colspan="4"
+										>Withdraw History</th>
 									</tr>
 								</thead>
 								<tbody class="bg-white">
-									<tr v-for="withdrawRequest in laravelData.data" :key="withdrawRequest.id">
-										<td class="px-4" colspan="2">
+									<tr
+										v-for="withdrawRequest in laravelData.data"
+										:key="withdrawRequest.id"
+									>
+										<td
+											class="px-4"
+											colspan="2"
+										>
 											৳
 											<span class="fw-bolder">{{ withdrawRequest.amount }} </span>
 										</td>
 										<td colspan="1">
 											{{ withdrawRequest.createdAt | moment("LL") }}
 										</td>
-										<td colspan="1" class="text-primary">
+										<td
+											colspan="1"
+											class="text-primary"
+										>
 											{{ withdrawRequest.status | capitalize }}
 										</td>
 									</tr>
 								</tbody>
 							</table>
 
-							<pagination class="mt-5 d-none d-md-flex" :limit="3" :data="laravelData" @pagination-change-page="getResults"></pagination>
-							<pagination class="mt-5 d-flex d-md-none" :limit="-1" :data="laravelData" @pagination-change-page="getResults"></pagination>
+							<pagination
+								class="mt-5 d-none d-md-flex"
+								:limit="3"
+								:data="laravelData"
+								@pagination-change-page="getResults"
+							></pagination>
+							<pagination
+								class="mt-5 d-flex d-md-none"
+								:limit="-1"
+								:data="laravelData"
+								@pagination-change-page="getResults"
+							></pagination>
 						</div>
 						<!-- table ends -->
 					</div>
@@ -92,7 +123,7 @@ export default {
 	methods: {
 		getResults(page = 1) {
 			this.$axios
-				.$get(`/withdraws?seller_id=${this.$auth.user.id}?page=` + page)
+				.$get(`/withdraws?page=` + page)
 				.then((response) => {
 					this.laravelData = response;
 				});
